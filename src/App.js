@@ -1,41 +1,68 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import { Button, Header, Form, Grid } from 'semantic-ui-react'
+import Step1 from './Step1';
+import Step2 from './Step2';
+import Step3 from './Step3';
+import { Container, Button, Header, Form, Grid } from 'semantic-ui-react'
 
 class App extends Component {
-  render() {
-    const timeOptions = [
-      { text: 'horas', value: 'hours' },
-      { text: 'minutos', value: 'minutes' },
-    ];
+  constructor(props) {
+    super(props);
 
+    this.state = {
+      currentStep: 1,
+      task: {
+        text: '',
+        unit: 'hours',
+        time: 4,
+        repetitions: 2,
+      },
+    }
+
+    this.renderCurrentStep = this.renderCurrentStep.bind(this);
+    this.changeCurrentStep = this.changeCurrentStep.bind(this);
+    this.changeTask = this.changeTask.bind(this);
+  };
+
+  changeTask(property) {
+    this.setState({ task: Object.assign({}, this.state.task, property) });
+  }
+
+  renderCurrentStep() {
+    const stepById = {
+      1: <Step1 task={this.state.task} changeTask={this.changeTask} changeStep={this.changeCurrentStep} />,
+      2: <Step2 task={this.state.task} changeStep={this.changeCurrentStep} />,
+      3: <Step3 task={this.state.task} changeStep={this.changeCurrentStep} />,
+    }
+
+    return stepById[this.state.currentStep];
+  }
+
+  changeCurrentStep(step) {
+    this.setState({ currentStep: step });
+  }
+
+  render() {
     return (
 
       <div className="App">
-        <Grid>
-          <Grid.Row>
-            <Grid.Column width={8}>
-            </Grid.Column>
-            <Grid.Column width={8}>
-              <Header as="h1">
-                Descubra o que dá pra ser feito com o tempo que você gasta na tarefa mais chata do mundo
-              </Header>
-              <Form size="massive">
-                <Form.Input label='Que tarefa é essa?' type='text' />
-                <Form.Group inline>
-                  <Form.Input width={2} type='number' value="4" />
-                  <Form.Select fluid options={timeOptions} value="hours" />
-                  <Form.Input width={2} type='number' value="2" />
-                  <Form.Field>
-                    <p>vezes por mês</p>
-                  </Form.Field>
-                </Form.Group>
-              </Form>
-              <Button color="yellow">Calcular</Button>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
+        <div className={`bg bg${this.state.currentStep}`} />
+        <Container>
+          <Grid>
+            <Grid.Row>
+              <Grid.Column width={8} className="top-margin--sm">
+                <Header className="logo">
+                  busywork
+                </Header>
+              </Grid.Column>
+
+              {this.renderCurrentStep()}
+
+            </Grid.Row>
+
+          </Grid>
+        </Container>
       </div>
     );
   }
