@@ -60,7 +60,7 @@ class App extends Component {
       <div className='App'>
         <div className={`bg bg${this.state.currentStep}`} />
         <Container>
-          <Grid stackable='true'>
+          <Grid stackable>
             <Grid.Row>
               <Grid.Column width={8} className='top-margin--sm'>
                 <Header className='logo'>
