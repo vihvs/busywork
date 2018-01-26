@@ -49,7 +49,7 @@ class App extends Component {
     const textError = !this.state.task.text.length;
     let newState = { formSubmited: true };
 
-    this.setState(newState)
+    this.setState(newState);
 
     return !textError;
   }
