@@ -57,14 +57,14 @@ class Step2 extends Component {
           Já pensou em automatizar esse trabalho?
         </Header>
 
-        <Form.Field inline>
-          <Button as="a" size="huge" onClick={() => this.goToStep(1)}>
-            Calcular outra tarefa
-          </Button>
-          <Button as="a" color="yellow" size="huge" onClick={() => this.goToStep(3)}>
+        <Form.Group inline>
+          <Button as="a" color="yellow" size="huge" onClick={() => this.goToStep(3)} className="top-margin--xs">
             Dá pra automatizar?
           </Button>
-        </Form.Field>
+          <Button as="a" size="huge" onClick={() => this.goToStep(1)} className="top-margin--xs">
+            Calcular outra tarefa
+          </Button>
+        </Form.Group>
       </Grid.Column>
     );
   }

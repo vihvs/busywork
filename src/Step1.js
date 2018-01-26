@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Button, Header, Form, Grid } from 'semantic-ui-react'
+import { Responsive, Container, Button, Header, Form, Grid } from 'semantic-ui-react'
 
 class Step1 extends Component {
   constructor(props) {
@@ -32,7 +32,7 @@ class Step1 extends Component {
     return(
       <Grid.Column width={8} className='content' className='top-margin--lg'>
         <Header as='h1' className='headline'>
-          Pense numa <br /> tarefa chata.
+          Pense numa <Responsive as='br' minWidth={992} /> tarefa chata.
         </Header>
         <Form size='massive' className='top-margin--sm'>
           <Form.Field>
@@ -46,7 +46,7 @@ class Step1 extends Component {
           <Form.Field className='bottom-margin--xs'>
             <label className='text-grey'>Quanto tempo você gasta?</label>
           </Form.Field>
-          <Form.Group inline>
+          <Form.Group inline unstackable>
             <Form.Input
               width='5'
               type='number'
@@ -66,7 +66,7 @@ class Step1 extends Component {
               Quantas vezes você repete?
             </label>
           </Form.Field>
-          <Form.Group inline>
+          <Form.Group inline unstackable>
             <Form.Input
               width='5'
               type='number'

@@ -46,13 +46,13 @@ class App extends Component {
   render() {
     return (
 
-      <div className="App">
+      <div className='App'>
         <div className={`bg bg${this.state.currentStep}`} />
         <Container>
-          <Grid>
+          <Grid stackable='true'>
             <Grid.Row>
-              <Grid.Column width={8} className="top-margin--sm">
-                <Header className="logo">
+              <Grid.Column width={8} className='top-margin--sm'>
+                <Header className='logo'>
                   busywork
                 </Header>
               </Grid.Column>
