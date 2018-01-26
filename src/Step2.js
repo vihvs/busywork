@@ -42,7 +42,7 @@ class Step2 extends Component {
         <br/>
 
         <Header as="p" size="large">
-          Isso é o tempo que leva pra
+          Isso é tempo o suficiente pra
         </Header>
 
         <Header as="p" size="huge">
@@ -54,7 +54,7 @@ class Step2 extends Component {
         <br/>
 
         <Header as="p" size="large">
-          Já pensou em automatizar isso?
+          Já pensou em automatizar esse trabalho?
         </Header>
 
         <Form.Field inline>

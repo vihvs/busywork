@@ -30,27 +30,27 @@ class Step1 extends Component {
     ];
 
     return(
-      <Grid.Column width={8} className="content" className="top-margin--lg">
-        <Header as="h1" className="headline">
+      <Grid.Column width={8} className='content' className='top-margin--lg'>
+        <Header as='h1' className='headline'>
           Pense numa <br /> tarefa chata.
         </Header>
-        <Form size="massive" className="top-margin--sm">
+        <Form size='massive' className='top-margin--sm'>
           <Form.Field>
-            <label className="bottom-margin--xs text-grey">Que tarefa é essa?</label>
+            <label className='bottom-margin--xs text-grey'>Que tarefa é essa?</label>
             <Form.Input type='text'
               value={this.props.task.text}
-              name="text"
-              placeholder="Exemplo: copiar dados de PDF e inserir no excel"
+              name='text'
+              placeholder='Ex: copiar e colar dados no excel'
               onChange={this.handleChangeTask} />
           </Form.Field>
-          <Form.Field className="bottom-margin--xs">
-            <label className="text-grey">Quanto tempo você gasta?</label>
+          <Form.Field className='bottom-margin--xs'>
+            <label className='text-grey'>Quanto tempo você gasta?</label>
           </Form.Field>
           <Form.Group inline>
             <Form.Input
-              width={this.props.task.time.toString().length + 3}
+              width='5'
               type='number'
-              name="time"
+              name='time'
               onChange={this.handleChangeTask}
               value={this.props.task.time}
             />
@@ -60,19 +60,29 @@ class Step1 extends Component {
               value={this.props.task.unit}
               onChange={this.handleChangeTaskUnit}
             />
+          </Form.Group>
+          <Form.Field className='bottom-margin--xs'>
+            <label className='text-grey'>
+              Quantas vezes você repete?
+            </label>
+          </Form.Field>
+          <Form.Group inline>
             <Form.Input
-              width={this.props.task.repetitions.toString().length + 4}
+              width='5'
               type='number'
-              name="repetitions"
+              name='repetitions'
+              min='1'
               value={this.props.task.repetitions}
               onChange={this.handleChangeTask}
             />
             <Form.Field>
-              <p>vezes por mês</p>
+              <p>
+                {this.props.task.repetitions === '1' ? 'vez' : 'vezes'} por mês
+              </p>
             </Form.Field>
           </Form.Group>
         </Form>
-        <Button as="a" color="yellow" size="huge" onClick={this.goToNextStep}>
+        <Button as='a' color='yellow' size='huge' onClick={this.goToNextStep}>
           Calcular o que dá pra fazer nesse tempo
         </Button>
       </Grid.Column>
