@@ -8,6 +8,7 @@ class Step1 extends Component {
     this.goToNextStep = this.goToNextStep.bind(this);
     this.handleChangeTask = this.handleChangeTask.bind(this);
     this.handleChangeTaskUnit = this.handleChangeTaskUnit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   };
 
   goToNextStep() {
@@ -22,6 +23,9 @@ class Step1 extends Component {
     this.props.changeTask({ unit: data.value })
   }
 
+  handleSubmit() {
+    this.props.validate() && this.goToNextStep();
+  }
 
   render() {
     const timeOptions = [
@@ -40,6 +44,7 @@ class Step1 extends Component {
             <Form.Input type='text'
               value={this.props.task.text}
               name='text'
+              error={this.props.formSubmited && !this.props.task.text.length}
               placeholder='Ex: copiar e colar dados no excel'
               onChange={this.handleChangeTask} />
           </Form.Field>
@@ -82,7 +87,7 @@ class Step1 extends Component {
             </Form.Field>
           </Form.Group>
         </Form>
-        <Button as='a' color='yellow' size='huge' onClick={this.goToNextStep}>
+        <Button as='a' color='yellow' size='huge' onClick={this.handleSubmit}>
           Calcular o que dá pra fazer nesse tempo
         </Button>
       </Grid.Column>

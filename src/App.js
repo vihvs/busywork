@@ -18,11 +18,13 @@ class App extends Component {
         time: 4,
         repetitions: 2,
       },
+      formSubmited: false,
     }
 
     this.renderCurrentStep = this.renderCurrentStep.bind(this);
     this.changeCurrentStep = this.changeCurrentStep.bind(this);
     this.changeTask = this.changeTask.bind(this);
+    this.validate = this.validate.bind(this);
   };
 
   changeTask(property) {
@@ -31,16 +33,25 @@ class App extends Component {
 
   renderCurrentStep() {
     const stepById = {
-      1: <Step1 task={this.state.task} changeTask={this.changeTask} changeStep={this.changeCurrentStep} />,
+      1: <Step1 task={this.state.task} formSubmited={this.state.formSubmited} validate={this.validate} changeTask={this.changeTask} changeStep={this.changeCurrentStep} />,
       2: <Step2 task={this.state.task} changeStep={this.changeCurrentStep} />,
-      3: <Step3 task={this.state.task} changeStep={this.changeCurrentStep} />,
+      3: <Step3 task={this.state.task} />,
     }
 
     return stepById[this.state.currentStep];
   }
 
   changeCurrentStep(step) {
-    this.setState({ currentStep: step });
+    this.setState({ currentStep: step, formSubmited: false });
+  }
+
+  validate() {
+    const textError = !this.state.task.text.length;
+    let newState = { formSubmited: true };
+
+    this.setState(newState)
+
+    return !textError;
   }
 
   render() {
