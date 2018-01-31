@@ -36,11 +36,27 @@ module.exports = [
     text: 'assistir todos os jogos da Copa do Mundo de 2014'
   },
   {
-    hours: 5,
-    text: 'zerar o Super Mario Bros num Super Nintendo'
+    hours: 3700,
+    text: 'ir até o Japão. A pé'
   },
   {
-    hours: 5,
-    text: 'zerar o Super Mario Bros num Super Nintendo'
+    hours: 7400,
+    text: 'ir até o Japão. A pé. Ida e volta'
+  },
+  {
+    hours: 480,
+    text: 'montar um quebra-cabeça de 5 mil peças'
+  },
+  {
+    hours: 850,
+    text: 'assitir Stranger Things. Todas as duas temporadas'
+  },
+  {
+    hours: 43800,
+    text: 'ir até Júpiter. Se você estiver a mais de 200 mil km/h'
+  },
+  {
+    hours: 1024,
+    text: 'dar a volta ao mundo. De veleiro'
   },
 ];
