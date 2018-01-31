@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Button, Header, Form, Grid } from 'semantic-ui-react'
+import MessengerPlugin from 'react-messenger-plugin'
+
 
 class Step2 extends Component {
   constructor(props) {
@@ -35,9 +37,12 @@ class Step2 extends Component {
         </Header>
 
         <Form.Field inline>
-          <Button as="a" color="blue" size="huge" onClick={() => this.goToStep(3)}>
-            Pergunte pra gente pelo messenger
-          </Button>
+            <MessengerPlugin
+                  appId="1678638095724206"
+                  pageId="411921572591320"
+                  size='xlarge'
+                  type="message-us"
+            />
         </Form.Field>
       </Grid.Column>
     );

@@ -6542,7 +6542,7 @@ prompt-sui@^3.2.1:
     event-stream "~3.0.20"
     inquirer "3.2.x"
 
-prop-types@^15.5.10, prop-types@^15.6.0:
+prop-types@>=15.5.0, prop-types@^15.5.10, prop-types@^15.6.0:
   version "15.6.0"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.0.tgz#ceaf083022fc46b4a35f69e13ef75aed0d639856"
   dependencies:
@@ -6670,6 +6670,12 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-async-script@0.9.1:
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/react-async-script/-/react-async-script-0.9.1.tgz#d4a496c726fab0c6ef05998ab16e50c742820b60"
+  dependencies:
+    prop-types ">=15.5.0"
+
 react-dev-utils@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-5.0.0.tgz#425ac7c9c40c2603bc4f7ab8836c1406e96bb473"
@@ -6705,6 +6711,12 @@ react-dom@^16.2.0:
 react-error-overlay@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-4.0.0.tgz#d198408a85b4070937a98667f500c832f86bd5d4"
+
+react-messenger-plugin@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-messenger-plugin/-/react-messenger-plugin-2.0.0.tgz#d61407a1a18b8b8b7eddf4f59c399ec2f160b6cc"
+  dependencies:
+    react-async-script "0.9.1"
 
 react-scripts@1.1.0:
   version "1.1.0"
